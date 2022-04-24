@@ -4,7 +4,7 @@
  * Created Date: 22.04.2022 19:46:18
  * Author: 3urobeat
  * 
- * Last Modified: 24.04.2022 12:06:02
+ * Last Modified: 24.04.2022 13:04:01
  * Modified By: 3urobeat
  * 
  * Copyright (c) 2022 3urobeat <https://github.com/HerrEurobeat>
@@ -32,7 +32,8 @@ module.exports.run = () => {
         msgstructure: `[${logger.Const.ANIMATION}] [${logger.Const.DATE} | ${logger.Const.TYPE}] ${logger.Const.MESSAGE}`,
         paramstructure: [logger.Const.TYPE, logger.Const.MESSAGE, "nodate", "remove", logger.Const.ANIMATION],
         outputfile: "./output.txt",
-        animationdelay: 250
+        animationdelay: 250,
+        printdebug: false
     })
 
 
@@ -47,4 +48,42 @@ module.exports.run = () => {
         process.exit(9); //https://nodejs.org/api/process.html#process_exit_codes
     }
 
+
+    //get playlist data from Spotify
+    logger("info", "Fetching playlist data from Spotify...", false, false, logger.animation("loading"));
+
+    require("./helpers/fetchPlaylist.js").fetchPlaylist(config.playlistID, config.oAuthToken, (err, data) => {
+        
+        //check for err in callback and abort
+        if (err) {
+            logger("error", `An error ocurred while trying to fetch playlist data from Spotify!\nError: ${err}\n\nAborting...`);
+            process.exit(1);
+        }
+
+        logger("info", `Successfully fetched ${data.length} songs from Spotify!`);
+        
+        //convert each track obj into one string
+        let songsStrArr = [];
+
+        data.forEach((e, i) => {
+            let temp = ""
+
+            //add all artists
+            e.track.artists.every((f, j) => { 
+                if (j > 0) temp += ", " //add comma infront if not first iteration
+                temp += `${f.name}`
+            })
+
+            //add track title
+            temp += ` - ${e.track.name}`
+
+            //push temp str
+            songsStrArr.push(temp);
+
+            //check if finished
+            if (i + 1 == data.length) {
+                logger("", songsStrArr, true)
+            }
+        })
+    })
 }
