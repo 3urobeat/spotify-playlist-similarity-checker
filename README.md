@@ -41,3 +41,14 @@ You can now start the script by executing in the terminal:
   
 The script will fetch all songs and then compare them.  
 The full output will also be saved in the `output.txt` file, which might make looking at the results easier for you.  
+  
+&nbsp; 
+  
+## Config
+Documentation of config settings:  
+- playlistID (String): Spotify playlist ID of the playlist to fetch
+- oAuthToken (String): Spotify oAuthToken to authorize this script to access the Spotify API (see setup above request)
+- fetchDelay (Number): Time in ms to wait between each 100 songs requested from the Spotify API. Default: 500
+- ignoreSimilarityBelowPerc (Number): Similarities below this percentage value will be ignored. Default: 90
+  
+The similarity of two artist - song title pairs is measured with the [Jaro-Winkler distance](https://en.wikipedia.org/wiki/Jaro%E2%80%93Winkler_distance).  
