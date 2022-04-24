@@ -1,10 +1,10 @@
 /*
  * File: main.js
- * Project: spotifyPlaylistSimilarityChecker
+ * Project: spotify-playlist-similarity-checker
  * Created Date: 22.04.2022 19:46:18
  * Author: 3urobeat
  * 
- * Last Modified: 23.04.2022 10:54:45
+ * Last Modified: 24.04.2022 12:06:02
  * Modified By: 3urobeat
  * 
  * Copyright (c) 2022 3urobeat <https://github.com/HerrEurobeat>
@@ -38,7 +38,7 @@ module.exports.run = () => {
 
     //log startup message
     logger("", "", true);
-    logger("info", `spotifyPlaylistSimilarityChecker v${version} by 3urobeat\n`)
+    logger("info", `spotify-playlist-similarity-checker v${version} by 3urobeat\n`)
 
 
     //check if user provided needed config values

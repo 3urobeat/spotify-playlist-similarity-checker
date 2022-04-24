@@ -1,6 +1,6 @@
 {
-  "name": "spotifyplaylistsimilaritychecker",
-  "description": "Compares all song titles in your playlist and compares them to find duplicates",
+  "name": "spotify-playlist-similarity-checker",
+  "description": "Fetches all song titles in your playlist and compares them to find duplicates",
   "version": "0.0.1",
   "main": "index.js",
   "scripts": {
@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/HerrEurobeat/spotifyPlaylistSimilarityChecker.git"
+    "url": "git+https://github.com/HerrEurobeat/spotify-playlist-similarity-checker.git"
   },
   "author": "3urobeat",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/HerrEurobeat/spotifyPlaylistSimilarityChecker/issues"
+    "url": "https://github.com/HerrEurobeat/spotify-playlist-similarity-checker/issues"
   },
-  "homepage": "https://github.com/HerrEurobeat/spotifyPlaylistSimilarityChecker#readme",
+  "homepage": "https://github.com/HerrEurobeat/spotify-playlist-similarity-checker#readme",
   "dependencies": {
     "output-logger": "^2.1.1"
   }

@@ -1,10 +1,10 @@
 /*
  * File: index.js
- * Project: spotifyPlaylistSimilarityChecker
+ * Project: spotify-playlist-similarity-checker
  * Created Date: 22.04.2022 19:47:23
  * Author: 3urobeat
  * 
- * Last Modified: 22.04.2022 19:48:24
+ * Last Modified: 24.04.2022 12:06:02
  * Modified By: 3urobeat
  * 
  * Copyright (c) 2022 3urobeat <https://github.com/HerrEurobeat>
