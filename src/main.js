@@ -4,7 +4,7 @@
  * Created Date: 22.04.2022 19:46:18
  * Author: 3urobeat
  * 
- * Last Modified: 24.04.2022 17:17:43
+ * Last Modified: 24.04.2022 17:52:47
  * Modified By: 3urobeat
  * 
  * Copyright (c) 2022 3urobeat <https://github.com/HerrEurobeat>
@@ -19,7 +19,7 @@ const logger = require("output-logger");
 
 const config = require("../config.json");
 
-const version = "0.1";
+const version = "1.0";
 
 
 /**
