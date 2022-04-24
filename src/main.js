@@ -4,7 +4,7 @@
  * Created Date: 22.04.2022 19:46:18
  * Author: 3urobeat
  * 
- * Last Modified: 24.04.2022 16:26:05
+ * Last Modified: 24.04.2022 17:17:43
  * Modified By: 3urobeat
  * 
  * Copyright (c) 2022 3urobeat <https://github.com/HerrEurobeat>
@@ -61,6 +61,8 @@ module.exports.run = () => {
         }
 
         logger("info", `Successfully fetched ${data.length} songs from Spotify!`);
+
+        //require("fs").writeFileSync("./fetchedSongs.json", JSON.stringify(data, null, 4), err => {}) //uncomment to save fetched songs
         
         //convert each track obj into one string
         let songsStrArr = [];
@@ -83,6 +85,9 @@ module.exports.run = () => {
             //check if finished
             if (i + 1 == data.length) {
                 //logger("", songsStrArr, true) //uncomment to log all song titles that were fetched
+
+                //display warning message if arr is large af
+                if (songsStrArr.length > 2000) logger("warn", `Comparing ${data.length} song titles will take a while. Please be patient...`)
 
                 //compare strings
                 require("./helpers/compareStrings.js").compareStrings(songsStrArr, (duplicates, similarities) => {

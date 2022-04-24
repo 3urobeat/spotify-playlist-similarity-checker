@@ -1,4 +1,6 @@
 {
     "playlistID": "",
-    "oAuthToken": ""
+    "oAuthToken": "",
+    "fetchDelay": 500,
+    "ignoreSimilarityBelowPerc": 90
 }

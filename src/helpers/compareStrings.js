@@ -4,7 +4,7 @@
  * Created Date: 22.04.2022 19:49:04
  * Author: 3urobeat
  * 
- * Last Modified: 24.04.2022 16:55:48
+ * Last Modified: 24.04.2022 17:31:36
  * Modified By: 3urobeat
  * 
  * Copyright (c) 2022 3urobeat <https://github.com/HerrEurobeat>
@@ -16,6 +16,8 @@
 
 
 const logger = require("output-logger");
+
+const config = require("../../config.json");
 
 
 //Credit: https://sumn2u.medium.com/string-similarity-comparision-in-js-with-examples-4bae35f13968 & https://gist.github.com/sumn2u/0e0b5d9505ad096284928a987ace13fb#file-jaro-wrinker-js
@@ -107,18 +109,18 @@ module.exports.compareStrings = (arr, callback) => {
             if (i != j) {
                 if (arr[i] == arr[j]) {
                     
-                    if (!duplicates.includes(arr[i])) duplicates.push(`100%: "${arr[i]}"`) //push if not already in arr
+                    if (!duplicates.includes(`100%: "${arr[i]}"`)) duplicates.push(`100%: "${arr[i]}"`) //push if not already in arr
 
                 } else {
 
                     //compare the two strings using the helper function above and limit to 2 decimals
                     let similarityPerc = (jaroWrinker(arr[i], arr[j]) * 100).toFixed(2);
 
-                    //push to similarities object if >90% and doesn't exist yet (for example the other way around)
+                    //push to similarities object if >ignoreSimilarityBelowPerc % and doesn't exist yet (for example the other way around)
                     let compStr         = `${similarityPerc}%: "${arr[i]}"  &  "${arr[j]}"`
                     let compStrReversed = `${similarityPerc}%: "${arr[j]}"  &  "${arr[i]}"` //the other way around for check below
                     
-                    if (similarityPerc > 90 && !similarities.some(e => e.compStr == compStr || e.compStr == compStrReversed)) similarities.push({ compStr: compStr, similarityPerc: similarityPerc });
+                    if (similarityPerc > config.ignoreSimilarityBelowPerc && !similarities.some(e => e.compStr == compStr || e.compStr == compStrReversed)) similarities.push({ compStr: compStr, similarityPerc: similarityPerc });
                     
                 }
             }

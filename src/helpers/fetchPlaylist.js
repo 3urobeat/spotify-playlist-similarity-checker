@@ -4,7 +4,7 @@
  * Created Date: 22.04.2022 19:47:40
  * Author: 3urobeat
  * 
- * Last Modified: 24.04.2022 16:34:29
+ * Last Modified: 24.04.2022 17:31:01
  * Modified By: 3urobeat
  * 
  * Copyright (c) 2022 3urobeat <https://github.com/HerrEurobeat>
@@ -18,7 +18,7 @@
 const https  = require("https");
 const logger = require("output-logger");
 
-const fetchDelay = 500; //time to wait between parts to fetch
+const config = require("../../config.json");
 
 
 /**
@@ -37,7 +37,7 @@ module.exports.fetchPlaylist = (playlistID, oAuthToken, callback) => {
 
         //log debug and info msg
         logger("debug", `fetchPart(): Called with offset ${offset} & part ${part}`)
-        logger("info", `Fetching playlist part ${part + 1}...`, false, true, logger.animation("loading"));
+        logger("info", `Fetching playlist part ${part}...`, false, true, logger.animation("loading"));
 
         //Construct get request options obj - https://developer.spotify.com/console/get-playlist-tracks/
         let options = {
@@ -82,10 +82,10 @@ module.exports.fetchPlaylist = (playlistID, oAuthToken, callback) => {
 
                     //Check if we have to fetch more parts and call function again
                     if (body.total > (part + 1) * 100) {
-                        logger("info", `Finished fetching playlist part ${part}, waiting ${fetchDelay}ms before continuing with next part...`, false, true, logger.animation("loading"));
+                        logger("info", `Finished fetching playlist part ${part}, waiting ${config.fetchDelay}ms before continuing with next part...`, false, true, logger.animation("loading"));
 
                         //call this function again after fetchDelay ms with increased values
-                        setTimeout(() => fetchPart(offset + 100, part + 1), fetchDelay);
+                        setTimeout(() => fetchPart(offset + 100, part + 1), config.fetchDelay);
                     } else {
                         callback(null, itemsObj); //finished
                     }
