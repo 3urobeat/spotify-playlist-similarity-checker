@@ -4,7 +4,7 @@
  * Created Date: 22.04.2022 19:46:18
  * Author: 3urobeat
  * 
- * Last Modified: 24.04.2022 13:04:01
+ * Last Modified: 24.04.2022 16:26:05
  * Modified By: 3urobeat
  * 
  * Copyright (c) 2022 3urobeat <https://github.com/HerrEurobeat>
@@ -82,7 +82,38 @@ module.exports.run = () => {
 
             //check if finished
             if (i + 1 == data.length) {
-                logger("", songsStrArr, true)
+                //logger("", songsStrArr, true) //uncomment to log all song titles that were fetched
+
+                //compare strings
+                require("./helpers/compareStrings.js").compareStrings(songsStrArr, (duplicates, similarities) => {
+                    
+                    //print results
+                    if (duplicates.length > 0) {
+                        let temp = "";
+                        duplicates.every((e) => temp += `+ ${e}\n`)
+
+                        logger("", "", true);
+                        logger("info", `I found ${duplicates.length} duplicate song titles:`)
+                        logger("", temp, true);
+                    } else {
+                        logger("info", "No duplicate song titles found!\n")
+                    }
+
+                    
+                    if (similarities.length > 0) {
+                        let temp = "";
+                        similarities.every((e) => temp += `+ ${e.compStr}\n`)
+
+                        logger("", "", true);
+                        logger("info", `I found ${similarities.length} similar song titles:`)
+                        logger("", temp, true);
+                    } else {
+                        logger("info", "No similar song titles found!\n")
+                    }
+
+                    
+                    logger("info", "Done! Exiting...\n");
+                })
             }
         })
     })

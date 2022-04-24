@@ -4,7 +4,7 @@
  * Created Date: 22.04.2022 19:47:40
  * Author: 3urobeat
  * 
- * Last Modified: 24.04.2022 12:56:04
+ * Last Modified: 24.04.2022 16:34:29
  * Modified By: 3urobeat
  * 
  * Copyright (c) 2022 3urobeat <https://github.com/HerrEurobeat>
@@ -18,7 +18,7 @@
 const https  = require("https");
 const logger = require("output-logger");
 
-const fetchDelay = 1000; //time to wait between parts to fetch
+const fetchDelay = 500; //time to wait between parts to fetch
 
 
 /**
