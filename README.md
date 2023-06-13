@@ -18,8 +18,11 @@ To get your version number (if you already have node installed) type `node --ver
 Open a console window or terminal in the current folder.  
 Run the command `npm install` and wait for it to complete. This will install all necessary packages for the script.  
   
-Head over to the [Spotify Documentation website](https://developer.spotify.com/console/get-playlist-tracks), click on the 'GET TOKEN' button at the bottom, check the 'playlist-read-private' checkbox and click 'REQUEST TOKEN'.  
-After the page reloaded, copy the token which is now in the text box at the bottom.  
+Getting the API key recently got kind of annoying, thanks Spotify. Here's how to do it:  
+Head over to the [Spotify Documentation website](https://developer.spotify.com/console/get-playlist-tracks).  
+Right click somewhere, click on Inspect and open the Network tab.  
+Now click the 'Try it' button on the very right and you should see a 'POST' or 'fetch' request (depending on your browser) to 'tracks' pop up in your network tab.  
+Click on it, scroll down until you see the 'Authorization' key under 'Request Headers' and copy the long token that you see behind 'Bearer'.  
   
 Open the `config.json` with a text editor.  
   
