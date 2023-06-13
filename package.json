@@ -17,6 +17,6 @@
   },
   "homepage": "https://github.com/HerrEurobeat/spotify-playlist-similarity-checker#readme",
   "dependencies": {
-    "output-logger": "^2.1.1"
+    "output-logger": "^2.3.6"
   }
 }
