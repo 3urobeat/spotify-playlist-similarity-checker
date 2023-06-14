@@ -20,9 +20,9 @@ const logger = require("output-logger");
 
 const config = require("../config.json");
 
-const version = "1.0";
 const { fetchPlaylist } = require("./helpers/fetchPlaylist.js");
 
+const version = "1.1";
 
 
 /**
