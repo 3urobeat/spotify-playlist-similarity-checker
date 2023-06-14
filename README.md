@@ -3,6 +3,8 @@ This script fetches all songs in your provided playlist and compares them.
 Similar artist title pairs will be listed together and their similarity displayed in percent.  
 Exact duplicates are listed seperately.  
 
+Supports multithreading! Comparing 9023 songs with a Ryzen 9 7900X takes ~25 seconds (singlethreaded takes 5 minutes and 43 seconds).  
+
 &nbsp; 
 
 ## Download:
@@ -21,7 +23,7 @@ Run the command `npm install` and wait for it to complete. This will install all
 Getting the API key recently got kind of annoying, thanks Spotify. Here's how to do it:  
 Head over to the [Spotify Documentation website](https://developer.spotify.com/console/get-playlist-tracks).  
 Right click somewhere, click on Inspect and open the Network tab.  
-Now click the 'Try it' button on the very right and you should see a 'POST' or 'fetch' request (depending on your browser) to 'tracks' pop up in your network tab.  
+Now click the 'Try it' button on the very right and you should see a 'GET' or 'fetch' request (depending on your browser) to 'tracks' pop up in your network tab.  
 Click on it, scroll down until you see the 'Authorization' key under 'Request Headers' and copy the long token that you see behind 'Bearer'.  
   
 Open the `config.json` with a text editor.  
