@@ -1,7 +1,7 @@
 {
   "name": "spotify-playlist-similarity-checker",
   "description": "Fetches all song titles in your playlist and compares them to find duplicates",
-  "version": "0.0.1",
+  "version": "1.2.0",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

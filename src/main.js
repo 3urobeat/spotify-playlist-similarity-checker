@@ -4,7 +4,7 @@
  * Created Date: 22.04.2022 19:46:18
  * Author: 3urobeat
  *
- * Last Modified: 15.06.2023 10:48:53
+ * Last Modified: 15.06.2023 11:23:20
  * Modified By: 3urobeat
  *
  * Copyright (c) 2022 3urobeat <https://github.com/HerrEurobeat>
@@ -22,7 +22,7 @@ const config = require("../config.json");
 
 const { fetchPlaylist } = require("./helpers/fetchPlaylist.js");
 
-const version = "1.1";
+const version = "1.2";
 
 
 /**
@@ -72,7 +72,7 @@ module.exports.run = async () => {
         let temp = "";
 
         // Add all artists
-        e.track.artists.forEach((f, j) => {
+        e.track.artists.every((f, j) => {
             if (j > 0) temp += ", "; // Add comma infront if not first iteration
             temp += `${f.name}`;
         });
