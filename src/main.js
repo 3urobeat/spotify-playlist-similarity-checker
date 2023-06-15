@@ -4,7 +4,7 @@
  * Created Date: 22.04.2022 19:46:18
  * Author: 3urobeat
  *
- * Last Modified: 15.06.2023 10:10:42
+ * Last Modified: 15.06.2023 10:48:53
  * Modified By: 3urobeat
  *
  * Copyright (c) 2022 3urobeat <https://github.com/HerrEurobeat>
@@ -118,11 +118,12 @@ module.exports.run = async () => {
                             if (!duplicates.includes(e)) duplicates.push(e);
                         }
 
-                        for (e of data.sim) {
+                        data.sim.forEach((e, i) => {
                             if (!similarities.some(f => e.compStr == f.compStr || e.compStr == f.compStrReversed)) similarities.push(e);
-                        }
 
-                        resolve(); // Mark this worker as done when all similarities have been processed
+                            if (data.sim.length == i + 1) resolve(); // Mark this worker as done when all similarities have been processed
+                        });
+
                     });
                 }));
 
