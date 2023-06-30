@@ -8,7 +8,7 @@ Supports multithreading! Comparing 9023 songs with a Ryzen 9 7900X takes ~25 sec
 &nbsp; 
 
 ## Download:
-Click here: [Download](https://github.com/HerrEurobeat/spotify-playlist-similarity-checker/archive/refs/heads/main.zip)  
+Click here: [Download](https://github.com/3urobeat/spotify-playlist-similarity-checker/archive/refs/heads/main.zip)  
 Extract the zip and open the `spotify-playlist-similarity-checker` folder.  
   
 You need to have at least node.js version 14.15.0 installed: [Download](https://nodejs.org)  

@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/HerrEurobeat/spotify-playlist-similarity-checker.git"
+    "url": "git+https://github.com/3urobeat/spotify-playlist-similarity-checker.git"
   },
   "author": "3urobeat",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/HerrEurobeat/spotify-playlist-similarity-checker/issues"
+    "url": "https://github.com/3urobeat/spotify-playlist-similarity-checker/issues"
   },
-  "homepage": "https://github.com/HerrEurobeat/spotify-playlist-similarity-checker#readme",
+  "homepage": "https://github.com/3urobeat/spotify-playlist-similarity-checker#readme",
   "dependencies": {
     "output-logger": "^2.3.6"
   }

@@ -4,10 +4,10 @@
  * Created Date: 22.04.2022 19:46:18
  * Author: 3urobeat
  *
- * Last Modified: 15.06.2023 11:23:20
+ * Last Modified: 30.06.2023 09:49:04
  * Modified By: 3urobeat
  *
- * Copyright (c) 2022 3urobeat <https://github.com/HerrEurobeat>
+ * Copyright (c) 2022 3urobeat <https://github.com/3urobeat>
  *
  * Licensed under the MIT license: https://opensource.org/licenses/MIT
  * Permission is granted to use, copy, modify, and redistribute the work.
@@ -30,7 +30,7 @@ const version = "1.2";
  */
 module.exports.run = async () => {
 
-    // Configure my logging library (https://github.com/HerrEurobeat/output-logger#options-1)
+    // Configure my logging library (https://github.com/3urobeat/output-logger#options-1)
     logger.options({
         msgstructure: `[${logger.Const.ANIMATION}] [${logger.Const.DATE} | ${logger.Const.TYPE}] ${logger.Const.MESSAGE}`,
         paramstructure: [logger.Const.TYPE, logger.Const.MESSAGE, "nodate", "remove", logger.Const.ANIMATION],
